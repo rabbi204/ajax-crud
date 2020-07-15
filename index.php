@@ -58,10 +58,11 @@
 					<h2>Edit student data</h2>
 					<div class="mess"></div>
 					<hr>
-					<form id="add_student_form" action="" method="POST" enctype="multipart/form-data">
+					<form id="update_student_form" action="" method="POST" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="">Name</label>
 							<input class="form-control" name="name" type="text">
+							<input type="hidden" name="student_id">
 						</div>
 
 						<div class="form-group">
@@ -77,11 +78,12 @@
 						<div class="form-group">
 							
 							<img src="" alt="" style="height: 200px; width: 200px;">
+							<input type="hidden" name="old_photo" >
 
 						</div>
 						<div class="form-group">
 							<label for="">Photo</label>
-							<input class="form-control" name="photo" type="file">
+							<input class="form-control" name="new_photo" type="file">
 						</div>
 
 						<div class="form-group">
