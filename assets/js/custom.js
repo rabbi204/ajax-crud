@@ -13,8 +13,31 @@ $(document).ready(function(){
 	$(document).on('click','a#single_show', function(){
 		$('#single_student_modal').modal('show');
 
+		let show_id =$(this).attr('student_id');
+
+		$.ajax({
+			url: 'inc/ajax/show_single_student.php',
+			data: { id: show_id},
+			method:"POST",
+			success: function(data){
+
+				
+				let single_data = JSON.parse(data);
+
+				$('img#single_student_img').attr('src','media/students/' + single_data.photo );
+
+				$('h2#single_name').text(single_data.name);
+				$('td#single_name').text(single_data.name);
+				$('td#single_email').text(single_data.email);
+				$('td#single_cell').text(single_data.cell);
+
+			}
+		})
+
+
 		return false;
 	});
+
 
 	//add new student
 	$('form#add_student_form').submit(function(event){
