@@ -114,6 +114,34 @@ $(document).ready(function(){
 		return false;
 	});
 
+	// Edit student data
+	$(document).on('click','a#edit_student',function(event){
+		event.preventDefault();
+
+		let edit_id = $(this).attr('student_id');
+
+		$.ajax({
+			url: 'inc/ajax/edit_student.php',
+			data: { id: edit_id },
+			method: "POST",
+			success: function(data){
+				let edit_data = JSON.parse(data);
+				
+				$('#student_update_modal input[name="name"]').val(edit_data.name);
+				$('#student_update_modal input[name="email"]').val(edit_data.email);
+				$('#student_update_modal input[name="cell"]').val(edit_data.cell);
+				$('#student_update_modal img').attr('src','media/students/' + edit_data.photo);
+			}
+		});
+
+		$('#student_update_modal').modal('show');
+
+
+
+
+	});
+
+
 });
 
 })(jQuery)

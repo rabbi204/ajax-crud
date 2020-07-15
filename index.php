@@ -48,6 +48,50 @@
 				</div>
 			</div>
 		</div>
+	</div>	
+
+<!-- STUDENT EDIT MODAL  -->
+	<div id="student_update_modal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h2>Edit student data</h2>
+					<div class="mess"></div>
+					<hr>
+					<form id="add_student_form" action="" method="POST" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="">Name</label>
+							<input class="form-control" name="name" type="text">
+						</div>
+
+						<div class="form-group">
+							<label for="">Email</label>
+							<input class="form-control" name="email" type="text">
+						</div>
+
+						<div class="form-group">
+							<label for="">Cell</label>
+							<input class="form-control" name="cell" type="text">
+						</div>
+						
+						<div class="form-group">
+							
+							<img src="" alt="" style="height: 200px; width: 200px;">
+
+						</div>
+						<div class="form-group">
+							<label for="">Photo</label>
+							<input class="form-control" name="photo" type="file">
+						</div>
+
+						<div class="form-group">
+							<label for=""></label>
+							<input class="btn btn-primary" name="add" type="submit" value="Add student">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 
 
